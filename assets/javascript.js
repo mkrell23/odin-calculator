@@ -47,12 +47,12 @@ function setOperation(newOperation){
         display.innerText = displayNumber
         operation = newOperation;
     } else if (operation) {
-        secondNumber = parseInt(displayNumber);
-        firstNumber = doOperation();
-        displayNumber = "";
-        display.innerText = firstNumber;
-        operation = null;
+        equals()
         operation = newOperation
+    } else {
+        operation = newOperation;
+        displayNumber = "";
+        display.innerText = displayNumber
     }
 }
 
@@ -63,6 +63,7 @@ function equals(){
         displayNumber = "";
         display.innerText = firstNumber;
         operation = null;
+        secondNumber = null;
     }
 }
 
