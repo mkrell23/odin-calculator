@@ -9,9 +9,15 @@ let btnSeven = document.getElementById("7");
 let btnEight = document.getElementById("8");
 let btnNine = document.getElementById("9");
 
-let btnClear = document.getElementById("clear")
+let btnClear = document.getElementById("clear");
 
-let display = document.getElementById("display")
+let btnAdd = document.getElementById("plus");
+let btnSubtract = document.getElementById("minus");
+let btnMultiply = document.getElementById("multiply");
+let btnDivide = document.getElementById("divide");
+let btnEquals = document.getElementById("equals");
+
+let display = document.getElementById("display");
 
 let firstNumber = null;
 let secondNumber = null;
@@ -33,6 +39,71 @@ function multiply(a, b){
 function divide(a, b){
     return a / b;
 }
+
+function setOperation(newOperation){
+    if (!firstNumber){
+        firstNumber = parseInt(displayNumber);
+        displayNumber = "";
+        display.innerText = displayNumber
+        operation = newOperation;
+    } else if (operation) {
+        secondNumber = parseInt(displayNumber);
+        firstNumber = doOperation();
+        displayNumber = "";
+        display.innerText = firstNumber;
+        operation = null;
+        operation = newOperation
+    }
+}
+
+function equals(){
+    if (firstNumber && operation) {
+        secondNumber = parseInt(displayNumber);
+        firstNumber = doOperation();
+        displayNumber = "";
+        display.innerText = firstNumber;
+        operation = null;
+    }
+}
+
+function doOperation(){
+    switch (operation) {
+        case "add":
+            return add(firstNumber, secondNumber);
+        
+        case "subtract":
+            return subtract(firstNumber, secondNumber);
+
+        case "multiply":
+            return multiply(firstNumber, secondNumber);
+
+        case "divide":
+            return divide(firstNumber, secondNumber);
+
+        default:
+            break;
+    }
+}
+
+btnAdd.addEventListener('click', () => {
+    setOperation("add")
+});
+
+btnSubtract.addEventListener('click', () => {
+    setOperation("subtract")
+});
+
+btnMultiply.addEventListener('click', () => {
+    setOperation("multiply")
+});
+
+btnDivide.addEventListener('click', () => {
+    setOperation("divide")
+});
+
+btnEquals.addEventListener('click', () => {
+    equals();
+});
 
 btnZero.addEventListener('click', () => {
     console.log("Zero");
@@ -99,5 +170,8 @@ btnClear.addEventListener('click', () => {
     displayNumber = ""
     display.innerText = displayNumber
 });
+
+
+
 
 display.innerText = displayNumber ? displayNumber : "";
