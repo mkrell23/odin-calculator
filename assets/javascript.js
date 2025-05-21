@@ -169,6 +169,9 @@ btnClear.addEventListener('click', () => {
     console.log("Cleared");
     displayNumber = ""
     display.innerText = displayNumber
+    firstNumber = null;
+    secondNumber = null;
+    operation = null;
 });
 
 
