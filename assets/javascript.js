@@ -44,7 +44,6 @@ function setOperation(newOperation){
     if (!firstNumber){
         firstNumber = parseInt(displayNumber);
         displayNumber = "";
-        display.innerText = displayNumber
         operation = newOperation;
     } else if (operation) {
         equals()
@@ -52,7 +51,6 @@ function setOperation(newOperation){
     } else {
         operation = newOperation;
         displayNumber = "";
-        display.innerText = displayNumber
     }
 }
 
