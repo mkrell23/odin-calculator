@@ -6,7 +6,15 @@ div{
 #container{
     min-height: 95vh;
     flex-direction: column;
-    align-items: center;
+}
+
+#header > p{
+    border: 1px solid black;
+}
+
+#header > button{
+    height: 75%;
+    align-self: center;
 }
 
 #functions{
