@@ -59,8 +59,8 @@ function setOperation(newOperation){
 function equals(){
     if (firstNumber && operation) {
         secondNumber = parseInt(displayNumber);
-        firstNumber = doOperation();
         displayNumber = "";
+        firstNumber = doOperation();
         display.innerText = firstNumber;
         operation = null;
         secondNumber = null;
@@ -79,7 +79,13 @@ function doOperation(){
             return multiply(firstNumber, secondNumber);
 
         case "divide":
-            return divide(firstNumber, secondNumber);
+            console.log(secondNumber);
+            if (secondNumber === 0){
+                alert("LOL no");
+                return firstNumber;
+            } else {
+                return divide(firstNumber, secondNumber);
+            }
 
         default:
             break;
