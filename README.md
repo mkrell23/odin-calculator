@@ -2,7 +2,7 @@
 Simple browser calculator app from the Odin Project
 
 TODO: 
-* Make calculator not ugly
+* Make calculator less ugly
 * Add decimal support
 * Add backspace button
 * Add keyboard support

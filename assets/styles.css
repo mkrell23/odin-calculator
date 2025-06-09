@@ -43,6 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 div{
     display: flex;
     justify-content: center;
+    gap: 4px;
 }
 
 #container{
@@ -74,3 +75,15 @@ div{
     flex-basis: 50%;
 }
 
+#input button {
+  width: 75px;
+  height: 75px;
+}
+
+#display {
+  width: 233px;
+}
+
+#clear {
+  width: 75px;
+}
